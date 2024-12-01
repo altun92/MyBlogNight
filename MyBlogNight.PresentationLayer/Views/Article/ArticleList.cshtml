@@ -1,4 +1,5 @@
-﻿@model List<Article>
+﻿@model List<Article>﻿
+
 @{
     Layout = null;
 }
@@ -6,19 +7,16 @@
 <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
 <div class="container">
-    <br />
-    <br />
-
+    <br /><br />
     <table class="table table-bordered">
         <tr>
             <th>Id</th>
             <th>Başlık</th>
-            <th>Kategori Adı</th>
+            <th>Kategori</th>
             <th>Sil</th>
             <th>Güncelle</th>
             <th>Yorumlar</th>
         </tr>
-
         @foreach (var item in Model)
         {
             <tr>
@@ -26,11 +24,10 @@
                 <td>@item.Title</td>
                 <td>@item.Category.CategoryName</td>
                 <td><a href="/Article/DeleteArticle/@item.ArticleId" class="btn btn-danger">Sil</a></td>
-                <td><a href="/Article/UpdateArticle/@item.ArticleId" class="btn btn-warning">Güncelle</a></td>
-                <td><a href="/Article/CommentArticle/@item.ArticleId" class="btn btn-success">Yorumlar</a></td>
+                <td><a href="/Article/UpdateArticle/@item.ArticleId" class="btn btn-success">Güncelle</a></td>
+                <td><a href="/Article/CommentArticle/@item.ArticleId" class="btn btn-warning">Yorumlar</a></td>
             </tr>
-            
         }
     </table>
-    <a href="/Article/CreateArticle" class="btn btn-primary">Yeni Makale Girişi</a>
+    <a href="/Article/CreateArticle/" class="btn btn-primary">Yeni Makale Girişi</a>
 </div>

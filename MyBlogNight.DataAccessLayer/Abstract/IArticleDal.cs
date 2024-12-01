@@ -9,6 +9,9 @@ namespace MyBlogNight.DataAccessLayer.Abstract
 {
     public interface IArticleDal : IGenericDal<Article>
     {
+        //Entitiy'e özgü metotların olduğu alan. Article'a özgü metotlar.
+        //Entity'e özgü metotları EfArticleDal içerisinde implemente edilmesi gerekir.
         List<Article> ArticleListWithCategory();
+        List<Article> ArticleListWithCategoryAndAppUser();
     }
 }

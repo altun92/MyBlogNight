@@ -11,16 +11,25 @@ using System.Threading.Tasks;
 
 namespace MyBlogNight.DataAccessLayer.EntityFramework
 {
+    //Burada Abstract klasörü içerisinde ki DAL ' a yazılan metotların işleyişi yazılır.
     public class EfArticleDal : GenericRepository<Article>, IArticleDal
     {
         public EfArticleDal(BlogContext context) : base(context)
         {
         }
-
+        //Burada yazılan metotlar Business katmanında ilgili Entity içine başına T konularak eklenir.
+        //Bununla beraber Presentation katmanı bu metotlara erişebilir.
         public List<Article> ArticleListWithCategory()
         {
             var context = new BlogContext();
             var values = context.Articles.Include(x=>x.Category).ToList();
+            return values;
+        }
+
+        public List<Article> ArticleListWithCategoryAndAppUser()
+        {
+            var context = new BlogContext();
+            var values = context.Articles.Include(x=>x.Category).Include(y=>y.AppUser).ToList();
             return values;
         }
     }

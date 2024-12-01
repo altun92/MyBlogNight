@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyBlogNight.DataAccessLayer.Repositories
 {
+    //Burada IGenericDal içerisinde tanımlanan metot isimleri implemente edilir ve içleri doldurulur.
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {
         private readonly BlogContext _context;
