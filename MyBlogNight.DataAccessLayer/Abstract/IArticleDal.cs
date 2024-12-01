@@ -13,5 +13,7 @@ namespace MyBlogNight.DataAccessLayer.Abstract
         //Entity'e özgü metotları EfArticleDal içerisinde implemente edilmesi gerekir.
         List<Article> ArticleListWithCategory();
         List<Article> ArticleListWithCategoryAndAppUser();
+        Article ArticleListWithCategoryAndAppUserByArticleId(int id);
+        void ArticleViewCountIncrease(int id);
     }
 }
