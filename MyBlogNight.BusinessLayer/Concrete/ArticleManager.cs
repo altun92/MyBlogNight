@@ -17,7 +17,6 @@ namespace MyBlogNight.BusinessLayer.Concrete
         {
             _articleDal = articleDal;
         }
-
         public List<Article> TArticleListWithCategory()
         {
             return _articleDal.ArticleListWithCategory();
@@ -46,6 +45,11 @@ namespace MyBlogNight.BusinessLayer.Concrete
         public List<Article> TGetAll()
         {
             return _articleDal.GetAll();
+        }
+
+        public List<Article> TGetArticleByAppUserId(int id)
+        {
+            return _articleDal.GetArticleByAppUserId(id);
         }
 
         public Article TGetById(int id)
